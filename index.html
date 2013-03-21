@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script src="http://www.parsecdn.com/js/parse-1.2.2.min.js"></script>
+		<script>
+			Parse.initialize("LuOuYfNr2Q6OhNM5DnBWXmuDmEo32kfAynQejI0V", "URLIagdxoysjeTPIiUQmSBm8ONXxl48kf26kTkNU");
+		</script>
+		<script>
+			var FacetCreatedEvent = Parse.Object.extend("FacetCreatedEvent");
+			var query = new Parse.Query(FacetCreatedEvent);
+			query.find({
+			  success: function(results) {
+			    alert("Successfully retrieved " + results.length + " events.");
+			  },
+			  error: function(error) {
+			    alert("Error: " + error.code + " " + error.message);
+			  }
+			});
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
