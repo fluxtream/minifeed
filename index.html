@@ -1,23 +1,26 @@
 <html>
 	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
 		<script src="http://www.parsecdn.com/js/parse-1.2.2.min.js"></script>
 		<script>
 			Parse.initialize("LuOuYfNr2Q6OhNM5DnBWXmuDmEo32kfAynQejI0V", "URLIagdxoysjeTPIiUQmSBm8ONXxl48kf26kTkNU");
 		</script>
-		<script>
-			var FacetCreatedEvent = Parse.Object.extend("FacetCreatedEvent");
-			var query = new Parse.Query(FacetCreatedEvent);
-			query.find({
-			  success: function(results) {
-			    alert("Successfully retrieved " + results.length + " events.");
-			  },
-			  error: function(error) {
-			    alert("Error: " + error.code + " " + error.message);
-			  }
-			});
-		</script>
+		<script src="/js/main.js"></script>
 	</head>
 	<body>
-		
+		<table>
+			<thead>
+				<tr>
+					<th>Time</th>
+					<th>Connector</th>
+					<th>Object Type</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody id="feed">
+			</tbody>
+		</table>
 	</body>
 </html>
+
