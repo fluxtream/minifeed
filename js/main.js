@@ -21,7 +21,7 @@ $(document).ready(function() {
 		var resultsData = [];
 		for (var i=0; i<results.length; i++) {
 			var resultObject = {};
-			resultObject.start = new Date(results[i].attributes.start);
+			resultObject.start = jQuery.timeago(new Date(results[i].attributes.start));
 			resultObject.connectorName = results[i].attributes.connectorName;
 			resultObject.objectType = results[i].attributes.objectType;
 			resultObject.description = results[i].attributes.description;
