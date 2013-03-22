@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	var FacetCreatedEvent = Parse.Object.extend("FacetCreatedEvent");
 	var query = new Parse.Query(FacetCreatedEvent);
-	query.equalTo("username", "candide");
-	query.equalTo("serverName", "candide_local");
+	query.equalTo("username", username);
+	query.equalTo("serverName", serverName);
 	query.limit(20);
 	query.descending("start");
 	var templateText = "{{#results}}" +

@@ -15,6 +15,13 @@ fs.readFile(__dirname + "/templates/index.html", 'utf8', function (err,data) {
 
 var app = express.createServer();
 app.use(express.static(__dirname+'/static'));
+
+app.get("/:username/:serverName", function(req, res, next) {
+  var params = {process: process, serverName: req.params.serverName, username: req.params.username};
+  res.send(template.render(params));
+});
+app.listen(port);
+
 app.get('/index.html', function(req, res, next){
   res.send(template.render(process));
 });
